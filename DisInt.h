@@ -1,7 +1,5 @@
 #pragma once
+#include "Assert.h"
 
 typedef unsigned short DisInt;
-static void assertIsDis(DisInt x) {
-   if (x >= 59049)
-      __builtin_trap();
-}
+#define assertIsDis(x) Assert(0<=(x) && (x)<=59048)

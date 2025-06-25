@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Assert.h"
 #include "DisInt.h"
 
 typedef enum {

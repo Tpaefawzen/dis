@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include "dis-step.h"
-
-#define Assert(c) if(!(c)) __builtin_trap()
+#include "DisInt.h"
+#include "Assert.h"
 
 int main(void) {
    DisInt a,c,d,mem[59049]={0};

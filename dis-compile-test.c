@@ -1,6 +1,5 @@
 #include "dis-compile.h"
-
-#define Assert(c) if (!(c)) __builtin_trap();
+#include "Assert.h"
 
 int main(void) {
    DisInt mem1[59049] = {0}, len1 = 0;
