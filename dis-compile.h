@@ -28,8 +28,6 @@ static DisCompileResult dis_compileAppendOne(
       DisCompileStatus *status,
       _Bool is_eof, unsigned char c)
 {
-   assertIsDis(*len);
-
    if (*status == CompileStatusOutComment) {
       if (is_eof) return CompileResultDoneOk;
 

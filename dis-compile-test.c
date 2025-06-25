@@ -24,4 +24,13 @@ int main(void) {
 
    for (int i=0; i<sizeof(expected1)-1; i++)
       Assert(mem1[i] == expected1[i]);
+
+   Assert(dis_compileAppendOne(mem1, &len1, &s, 0, '(') == CompileResultWipOk);
+   Assert(dis_compileAppendOne(mem1, &len1, &s, 1, 0) == CompileResultErrUnclosedComment);
+
+   len1 = 59047;
+   s = CompileStatusOutComment;
+   Assert(dis_compileAppendOne(mem1, &len1, &s, 0, 33) == CompileResultWipOk);
+   Assert(dis_compileAppendOne(mem1, &len1, &s, 0, 33) == CompileResultWipOk);
+   Assert(dis_compileAppendOne(mem1, &len1, &s, 0, 33) == CompileResultErrTooLong);
 }
